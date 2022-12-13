@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1A557429483C7D00417A1C /* RepositoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A557329483C7D00417A1C /* RepositoryRow.swift */; };
+		DB1A557629483CEB00417A1C /* RepositoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A557529483CEB00417A1C /* RepositoryDetail.swift */; };
 		DB7E4060293B196F007176AC /* iOSGraphQLExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E405F293B196F007176AC /* iOSGraphQLExampleApp.swift */; };
 		DB7E4062293B196F007176AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E4061293B196F007176AC /* ContentView.swift */; };
 		DB7E4064293B1970007176AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB7E4063293B1970007176AC /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 		DB7E4071293B1970007176AC /* iOSGraphQLExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E4070293B1970007176AC /* iOSGraphQLExampleTests.swift */; };
 		DB7E407B293B1970007176AC /* iOSGraphQLExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E407A293B1970007176AC /* iOSGraphQLExampleUITests.swift */; };
 		DB7E407D293B1970007176AC /* iOSGraphQLExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E407C293B1970007176AC /* iOSGraphQLExampleUITestsLaunchTests.swift */; };
+		DB7E408A293B1AF5007176AC /* GraphQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7E4089293B1AF5007176AC /* GraphQLManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB1A557329483C7D00417A1C /* RepositoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRow.swift; sourceTree = "<group>"; };
+		DB1A557529483CEB00417A1C /* RepositoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetail.swift; sourceTree = "<group>"; };
 		DB7E405C293B196E007176AC /* iOSGraphQLExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSGraphQLExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7E405F293B196F007176AC /* iOSGraphQLExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSGraphQLExampleApp.swift; sourceTree = "<group>"; };
 		DB7E4061293B196F007176AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		DB7E4076293B1970007176AC /* iOSGraphQLExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSGraphQLExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB7E407A293B1970007176AC /* iOSGraphQLExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSGraphQLExampleUITests.swift; sourceTree = "<group>"; };
 		DB7E407C293B1970007176AC /* iOSGraphQLExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSGraphQLExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB7E4089293B1AF5007176AC /* GraphQLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				DB7E405F293B196F007176AC /* iOSGraphQLExampleApp.swift */,
 				DB7E4061293B196F007176AC /* ContentView.swift */,
+				DB1A557529483CEB00417A1C /* RepositoryDetail.swift */,
+				DB1A557329483C7D00417A1C /* RepositoryRow.swift */,
+				DB7E4089293B1AF5007176AC /* GraphQLManager.swift */,
 				DB7E4063293B1970007176AC /* Assets.xcassets */,
 				DB7E4065293B1970007176AC /* Preview Content */,
 			);
@@ -258,6 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB7E4062293B196F007176AC /* ContentView.swift in Sources */,
+				DB1A557429483C7D00417A1C /* RepositoryRow.swift in Sources */,
+				DB7E408A293B1AF5007176AC /* GraphQLManager.swift in Sources */,
+				DB1A557629483CEB00417A1C /* RepositoryDetail.swift in Sources */,
 				DB7E4060293B196F007176AC /* iOSGraphQLExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
