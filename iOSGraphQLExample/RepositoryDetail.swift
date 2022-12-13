@@ -9,13 +9,29 @@ import SwiftUI
 
 struct RepositoryDetail: View {
     var name: String
+    var description: String?
+    var url: String
+    var createdAt: String
+    
     var body: some View {
-        Text(name)
+        VStack(alignment: .leading) {
+            Text(name)
+            if let description {
+                Text(description)
+            }
+            Text(url)
+            Text(createdAt)
+        }
     }
 }
 
 struct RepositoryDetail_Previews: PreviewProvider {
     static var previews: some View {
-        RepositoryDetail(name: "title")
+        RepositoryDetail(
+            name: "name",
+            description: "description",
+            url: "url",
+            createdAt: "createdAt"
+        )
     }
 }

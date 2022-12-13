@@ -7,43 +7,37 @@
 
 import SwiftUI
 
+struct User: Decodable {
+    let repositories: Repositories
+}
+
+struct Repositories: Decodable {
+    let nodes: [Repository]
+}
+
+struct Repository: Decodable, Identifiable {
+    var id: String { url }
+    
+    let createdAt: String
+    let description: String?
+    let name: String
+    let url: String
+}
+
 struct RepositoriesQuery: Query {
     struct Response: Decodable {
         var user: User
-    }
-    
-    struct User: Decodable {
-        let name: String
-        let repositories: Repositories
-        let url: String
-    }
-    
-    struct Repositories: Decodable {
-        let nodes: [Repository]
-        let totalCount: Int
-    }
-    
-    struct Repository: Decodable {
-        let createdAt: String
-        let description: String?
-        let name: String
-        let updatedAt: String
-        let url: String
     }
     
     var body =
 """
 query {
     user(login: "haptaro") {
-      name
-      url
       repositories(last: 20) {
-        totalCount
         nodes {
           name
           description
           createdAt
-          updatedAt
           url
         }
       }
@@ -53,18 +47,23 @@ query {
 }
 
 struct ContentView: View {
-    @State private var list: [String] = []
+    @State private var repositories = [Repository]()
     @State private var showErrorAlert = false
     
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(list, id: \.self) { name in
+                    ForEach(repositories) { repository in
                         NavigationLink(destination: {
-                            RepositoryRow(name: name)
+                            RepositoryDetail(
+                                name: repository.name,
+                                description: repository.description,
+                                url: repository.url,
+                                createdAt: repository.createdAt
+                            )
                         }, label: {
-                            Text(name)
+                            RepositoryRow(name: repository.name)
                         })
                     }
                 }
@@ -75,7 +74,7 @@ struct ContentView: View {
                     case .failure(_):
                         showErrorAlert = true
                     case .success(let data):
-                        list = data.user.repositories.nodes.map { $0.name }
+                        repositories = data.user.repositories.nodes
                     }
                 }
             }
